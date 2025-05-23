@@ -14,7 +14,7 @@ window.onload = function () {
 
     if (isNaN(radius)) {
         userInfo.innerHTML =
-            "Radius is =`";
+            "Radius is =";
         return;
     }
 
