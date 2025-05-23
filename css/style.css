@@ -24,7 +24,9 @@ body {
 .page-content {
   color: rgb(186, 34, 34);
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 1.25rem;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 33px;
 }
 
 img {

@@ -9,17 +9,14 @@
 window.onload = function () {
     const params = new URLSearchParams(document.location.search);
     const radius = parseFloat(params.get("radius"));
-
+    
     const userInfo = document.getElementById("user-info");
 
-    if (isNaN(radius)) {
-        userInfo.innerHTML =
-            "Radius is =";
+    if (isNaN(radius) || radius <= 0) {
+        userInfo.innerHTML = "Please provide a valid, positive radius in the URL, e.g. <code>?radius=5</code>";
         return;
     }
 
     const volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
-    userInfo.innerHTML = `Given radius = ${radius} cm<br>  Volume = ${volume.toFixed(
-        2
-    )} cm³`;
+    userInfo.innerHTML = `Given radius = ${radius} cm<br>Volume = ${volume.toFixed(2)} cm³`;
 };
