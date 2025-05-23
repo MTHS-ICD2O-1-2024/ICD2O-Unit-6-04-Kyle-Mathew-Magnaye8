@@ -4,18 +4,22 @@
 // Created on: Apr 2025
 // This file contains the JS functions for index.html
 
-"use strict"
+"use strict";
 
-function calculateVolume() {
-  const radius = parseFloat(document.getElementById("radius-of-a-sphere").value)
+window.onload = function () {
+    const params = new URLSearchParams(document.location.search);
+    const radius = parseFloat(params.get("radius"));
 
-  if (isNaN(radius)) {
-    document.getElementById("user-info").innerText =
-      "Please enter a valid number."
-    return
-  }
+    const userInfo = document.getElementById("user-info");
 
-  const volume = (4 / 3) * Math.PI * Math.pow(radius, 3)
-  document.getElementById("user-info").innerText =
-    "Volume: " + volume.toFixed(2) + " cm³"
-}
+    if (isNaN(radius)) {
+        userInfo.innerHTML =
+            "Invalid radius. Please provide a number in the query string, e.g. <code>?radius=5</code>";
+        return;
+    }
+
+    const volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+    userInfo.innerHTML = `Given radius = ${radius} cm<br>  Volume = ${volume.toFixed(
+        2
+    )} cm³`;
+};
