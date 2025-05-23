@@ -14,7 +14,7 @@ window.onload = function () {
 
     if (isNaN(radius)) {
         userInfo.innerHTML =
-            "Invalid radius. Please provide a number in the query string, e.g. <code>?radius=5</code>";
+            "Radius is =`";
         return;
     }
 
