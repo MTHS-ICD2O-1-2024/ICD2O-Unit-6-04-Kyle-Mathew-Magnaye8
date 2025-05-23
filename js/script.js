@@ -4,7 +4,7 @@
 // Created on: Apr 2025
 // This file contains the JS functions for index.html
 
-"use strict";
+"use strict"
 
 // Redirect if "radius" is not in the URL
 const params = new URLSearchParams(window.location.search);
